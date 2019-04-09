@@ -80,7 +80,7 @@ namespace BankTest
             BankAccount account = new BankAccount("Mr. Bryan Walton", beginningBalance);
 
             // act  
-            account.Debit(creditAmount);
+            account.Credit(creditAmount);
 
             // assert  
             double actual = account.Balance;
@@ -98,12 +98,12 @@ namespace BankTest
 
             try
             {
-                account.Debit(creditAmount);
+                account.Credit(creditAmount);
             }
             catch (ArgumentOutOfRangeException e)
             {
                 // assert  
-                StringAssert.Contains(e.Message, BankAccount.DebitAmountLessThanZeroMessage);
+                StringAssert.Contains(e.Message, BankAccount.CreditAmountLessThanZeroMessage);
                 return;
             }
             Assert.Fail("No exception was thrown.");
@@ -122,12 +122,12 @@ namespace BankTest
 
             try
             {
-                account.Debit(creditAmount);
+                account.Credit(creditAmount);
             }
             catch (ArgumentOutOfRangeException e)
             {
                 // assert  
-                StringAssert.Contains(e.Message, BankAccount.DebitAmountExceedsBalanceMessage);
+                StringAssert.Contains(e.Message, BankAccount.CreditAmountExceedsBalanceMessage);
                 return;
             }
             Assert.Fail("No exception was thrown.");
