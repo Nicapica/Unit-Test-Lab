@@ -80,11 +80,11 @@ namespace BankTest
             BankAccount account = new BankAccount("Mr. Bryan Walton", beginningBalance);
 
             // act  
-            account.Credit(creditAmount);
+            account.Debit(creditAmount);
 
             // assert  
             double actual = account.Balance;
-            Assert.AreEqual(expected, actual, 0.001, "Account not debited correctly");
+            Assert.AreEqual(expected, actual, 0.001, "Account not credited correctly");
         }
 
         //unit test method  
