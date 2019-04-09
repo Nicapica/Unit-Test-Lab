@@ -84,7 +84,7 @@ namespace BankAccountNS
                 throw new ArgumentOutOfRangeException("amount", amount, CreditAmountLessThanZeroMessage);
             }
 
-            m_balance += amount;
+            m_balance -= amount;
         }
 
         private void FreezeAccount()

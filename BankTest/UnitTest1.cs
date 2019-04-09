@@ -80,7 +80,7 @@ namespace BankTest
             BankAccount account = new BankAccount("Mr. Bryan Walton", beginningBalance);
 
             // act  
-            account.Debit(creditAmount);
+            account.Credit(creditAmount);
 
             // assert  
             double actual = account.Balance;
